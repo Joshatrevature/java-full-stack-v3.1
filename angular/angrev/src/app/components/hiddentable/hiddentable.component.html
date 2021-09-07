@@ -1,0 +1,27 @@
+
+
+
+<div>
+    <button (click)="this.display = !display">Hide table</button>
+    <table class="table table-borederd" *ngIf="this.display">
+        <thead>
+            <tr>
+               <th>#</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees; index as i; first as f; last as l; even as e; odd as o"
+            [style.background]="e ? '#a59' : '#b2a'">
+                <td>{{ e }}</td>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.gender }}</td>
+                <td>{{ employee.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

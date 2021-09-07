@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo5style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+          <img src="https://via.placeholder.com/600/24f355" ;>
+        </div>
+        <div class="column">
+          <img src="https://via.placeholder.com/600/771796" >
+        </div>
+        <div class="column">
+          <img src="ihttps://via.placeholder.com/600/24f355" >
+        </div>
+        <div class="column">
+          <img src="https://via.placeholder.com/600/d32776" >
+        </div>
+      </div>
+      
+      
+      <div class="container">
+        
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+      
+       
+        <img id="expandedImg" style="width:100%">
+      
+        
+        <div id="imgtext"></div>
+      </div>
+    
+    <script>
+        function getPics(imgs){
+            var request = new XMLHttpRequest();
+            
+            request.open('GET', 'https://jsonplaceholder.typicode.com/photos', true)
+
+            var expandImg = document.getElementById("photos");
+
+            expandImg.src = imgs.alt;
+            
+            expandImg.parentElement.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

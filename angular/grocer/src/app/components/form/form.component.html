@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Register</h2>
+    
+    <form #userForm="ngForm" (submit)="onFormSubmit(userForm.value)">
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" #firstName="ngModel"  
+             [class.is-invalid]="firstName.invalid && firstName.touched" class="form-control" name="firstName" [(ngModel)]="userModel.firstName" required>
+            <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">This is required field</small>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="userModel.email">
+        </div>
+
+        <div class="form-group">
+            <label for="">Mobile</label>
+            <input type="text" class="form-control" #mobile="ngModel" [class.is-invalid]="mobile.invalid && mobile.touched"
+             name="mobile" [(ngModel)]="userModel.mobile" required pattern="^\d{10}$">
+             <div *ngIf="mobile.errors && (mobile.invalid || mobile.touched)">
+                <small class="text-danger" *ngIf="mobile.errors.required">Mobile number is required</small>
+                <small class="text-danger" *ngIf="mobile.errors.pattern">Mobile number must be 10 digit</small>
+             </div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Password</label>            
+            <input type="text" class="form-control" name="password" [(ngModel)]="userModel.password">
+        </div>
+
+       
+        <input type="submit" [disabled]="userForm.invalid" value="Register" class="btn btn-primary">
+    </form>
+</div>

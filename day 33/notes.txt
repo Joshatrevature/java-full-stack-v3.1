@@ -1,0 +1,77 @@
+Spring framework is a framework of frameworks since it provides support for multiple frameworks such as structs, hibernate,
+ ejb and so on
+
+Framework can be defined as a structure where we find solutions for various problems
+
+Spring comprises
+ioc
+aop
+dao
+context
+orm
+web mvc
+and more
+
+Advantages
+predefined templates -- provides templates for jdbc, hibernate, jpa and more
+loose coupling -- It uses dependcy injection
+easy testing - 
+lightweight -- it's lightweight because of it's pojo implementation
+fast development
+powerful abstraction
+declarative support
+
+Spring Modules
+Test
+Spring Core Container
+data access / integration
+web
+
+Ioc Container
+The ioc container is responsible to instantiate, configure and assemble the objects
+the ioc container gets information from the xml file
+The iocs main tasks are
+first instantiate the application
+second configure the object
+third assemble dependencies between the objects
+
+There are two types of ioc containers
+BeanFactory
+Application context
+
+Beanfactory vs application context
+org.springframework.bean.factory.beanfactory
+org springframework.context.applicationcontext interface act as ioc container
+
+the application interface is built on top of the beanfactory interface. it adds some extra functionality
+onto the beanfactory such as simple intergration with spring aop. Message resource, application layer specific
+context for web apps
+
+so it's better to use applicationcontext than beanfactory
+
+Dependacy Injection in spring
+Di is a design pattern that removes the dependency from the programming code so that it can
+be easy to manage and test the app.
+Di makes our programing code loosly coupled
+
+there are mainly two problem of dependency lookups
+1. Tight coupling the dependency lookup approach makes the code tightly coupled, if resources are changed
+we will need to make lots of changes to the code.
+2. It makes testing harder espcially for black box testing
+
+the framework provides two ways to inject dependencys
+by constructor
+or setter method
+
+dependency injection by constructor 
+we can inject the dependency by constructor by constructor-arg subelement of bean
+we can have
+	primitive and string based values
+	dependent objects
+	collection values
+
+dependency injection via setter method
+the property subelement of bean is used for setting injection
+
+differnces between constructor and setter injection
+partial dependency can be injected usinng setter
